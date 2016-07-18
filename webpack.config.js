@@ -19,7 +19,11 @@ var commonConfig = {
     ],
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(true)
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    new CopyWebpackPlugin([{
+      from: 'src/assets',
+      to: 'assets'
+    }]),
   ]
 
 };

@@ -38,8 +38,8 @@ import { ngApp } from './main.node';
 // Routes with html5pushstate
 // ensure routes match client-side-app
 app.get('/', ngApp);
-app.get('/about', ngApp);
-app.get('/about/*', ngApp);
+app.get('/about-mathijs-segers', ngApp);
+app.get('/my-history', ngApp);
 app.get('/home', ngApp);
 app.get('/home/*', ngApp);
 

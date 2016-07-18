@@ -5,7 +5,12 @@ import { Component } from '@angular/core';
   selector: 'home',
   styleUrls: [
   ],
-  templateUrl: 'home.template.html'
+  template: `
+    <h1>About Me</h1>
+    <p>
+      I'm Mathijs, And I'm into things
+    </p>
+  `
 })
-export class Home {
+export class About {
 }
