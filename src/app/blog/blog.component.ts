@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: __filename,
-  selector: 'home',
+  selector: 'blog',
   styleUrls: [
   ],
-  templateUrl: 'home.template.html'
+  templateUrl: 'blog.template.html'
 })
-export class Home {
+export class Blog {
 }

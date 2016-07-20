@@ -1,8 +1,6 @@
-import { Component, Directive, ElementRef, Renderer } from '@angular/core';
+import {Component, Directive, ElementRef, Renderer, ViewEncapsulation} from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Http } from '@angular/http';
-
-import { Home } from './home';
 
 /////////////////////////
 // ** MAIN APP COMPONENT **
@@ -14,8 +12,17 @@ import { Home } from './home';
   styleUrls: [
     'app.style.css'
   ],
+  encapsulation: ViewEncapsulation.None,
   template: `
     <header>
+      <div class="gravatar">
+          <h3 class="my-name">Mathijs Segers</h3>
+          <img src="http://1.gravatar.com/avatar/da2e78c90eaeaf04236488dc55c58810?size=480" alt="Mathijs Segers" />
+          <span>
+            I'm a software developer with experience in fields such as Modern Web Applications and various back-end technologies. 
+            I live with my girlfriend and two cats. When not coding I brew and drink beer &amp; play Games.
+          </span>
+      </div>
       <nav>
         <ul>
           <li>
@@ -25,12 +32,9 @@ import { Home } from './home';
             <a routerLinkActive="active" [routerLink]="[ '/about-mathijs-segers' ]">About me</a>
           </li>
           <li>
-            <a routerLinkActive="active" [routerLink]="[ '/my-history' ]">My History</a>
+            <a routerLinkActive="active" [routerLink]="[ '/skills-and-history' ]">Skills &amp; History</a>
           </li>
         </ul>
-        <div class="nav-footer">
-          <div class="logo"></div>        
-        </div>
       </nav>
     </header>
       <main>

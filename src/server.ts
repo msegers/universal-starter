@@ -39,7 +39,7 @@ import { ngApp } from './main.node';
 // ensure routes match client-side-app
 app.get('/', ngApp);
 app.get('/about-mathijs-segers', ngApp);
-app.get('/my-history', ngApp);
+app.get('/skills-and-history', ngApp);
 app.get('/home', ngApp);
 app.get('/home/*', ngApp);
 
