@@ -40,8 +40,10 @@ import { ngApp } from './main.node';
 app.get('/', ngApp);
 app.get('/about-mathijs-segers', ngApp);
 app.get('/skills-and-history', ngApp);
-app.get('/home', ngApp);
-app.get('/home/*', ngApp);
+app.get('/blog', ngApp);
+app.get('/blog/*', ngApp);
+app.get('/manage', ngApp);
+app.get('/manage/*', ngApp);
 
 // use indexFile over ngApp only when there is too much load on the server
 function indexFile(req, res) {

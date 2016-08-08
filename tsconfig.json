@@ -10,8 +10,7 @@
   "exclude": [
     "typings/main.d.ts",
     "typings/main",
-    "node_modules",
-    "node_modules/angularfire2/firebase3.d.ts"
+    "node_modules"
 
   ],
   "compileOnSave": false,

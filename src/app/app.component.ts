@@ -26,7 +26,7 @@ import { Http } from '@angular/http';
       <nav>
         <ul>
           <li>
-            <a routerLinkActive="active" [routerLink]="[ '/home' ]">Home</a>
+            <a routerLinkActive="active" [routerLink]="[ '/blog' ]">Home</a>
           </li>
           <li>
             <a routerLinkActive="active" [routerLink]="[ '/about-mathijs-segers' ]">About me</a>
@@ -40,7 +40,9 @@ import { Http } from '@angular/http';
       <main>
         <router-outlet></router-outlet>
       </main>
-    <footer></footer>
+    <footer>
+        <a [routerLink]="[ '/manage' ]">admin login</a>
+    </footer>
   `
 })
 export class App {

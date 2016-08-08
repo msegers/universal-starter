@@ -6,6 +6,15 @@ h1,h2,h3,h4,h5,h6,h7,.title {
   padding:0;
   vertical-align: top;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
 a {
   text-decoration: none;
   color:#F5C52C;
@@ -24,6 +33,13 @@ header {
   position: fixed;
   padding: 2rem 2rem 0 2rem;
   box-sizing: border-box;
+}
+footer {
+  position: fixed;
+  padding: 2rem 2rem 0 2rem;
+  bottom:0;
+  width:300px;
+  height:48px;
 }
 header nav ul li a {
   font-family: Montserrat, sans-serif
@@ -55,18 +71,6 @@ header .gravatar h3 {
 header .gravatar span {
   text-align:justify;
   display:block;
-}
-
-.nav-footer {
-  position: absolute;
-  bottom: 40px;
-  display: block;
-  height: 80px;
-  text-align: center;
-  width: 100%;
-}
-.nav-footer .logo:hover {
-  transform: rotate(5deg);
 }
 
 .content-image {
@@ -136,6 +140,34 @@ h2 {
 }
 p {
   margin-bottom: 2rem;
+}
+
+form {
+    display: block;
+}
+form input {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(0,0,0,0.3);
+    height: 62px;
+    color: #fff;
+    font-size: 1.2rem;
+    max-width: 100%;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+form button {
+    min-height: 62px;
+    font-size: 1.5rem;
+    max-width: 100%;
+    width: 300px;
+    background: rgba(245, 197, 44, 0.8);
+    cursor:pointer;
+    font-weight:bold;
+}
+form button:hover {
+    background: rgba(245, 197, 44, 1);
 }
 
 /**

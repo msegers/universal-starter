@@ -1,6 +1,6 @@
 <h1>Blog</h1>
-<article ngFor="let article of articles">
-    <a routerLink="['/blog', article.id]"><h2>{{article.title}}</h2></a>
+<article *ngFor="let article of blogs">
+    <a [routerLink]="['/blog', article.id]"><h2>{{article.title}}</h2></a>
     <div class="content">
         <p>{{article.intro}}</p>
         <div>
