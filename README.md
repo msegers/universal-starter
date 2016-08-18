@@ -1,3 +1,11 @@
+#Angular 2 Universal Starter - Msegers
+
+Hi so this is an experimental build which I'm going to use to replace my current website.
+I wanted it to be slightly SEO friendly so I'm using Angular Universtal. It could use some improvement, content is going to be loaded through AngularFire2, so a "back-end" is not required and auth goes through Firebase as well.
+
+Below the original Readme
+
+
 # Angular 2 Universal Starter [![Universal Angular 2](https://img.shields.io/badge/universal-angular2-brightgreen.svg?style=flat)](https://github.com/angular/universal)
 
 A minimal Angular 2 starter for Universal JavaScript using TypeScript and Webpack
