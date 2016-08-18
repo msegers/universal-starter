@@ -36,10 +36,12 @@ header {
 }
 footer {
   position: fixed;
-  padding: 2rem 2rem 0 2rem;
   bottom:0;
+  padding: 0 2rem;
+  text-transform: uppercase;
   width:300px;
   height:48px;
+  line-height:48px;
 }
 header nav ul li a {
   font-family: Montserrat, sans-serif
@@ -104,7 +106,10 @@ nav > ul > li a:hover {
   transform: rotate(-3deg);
   color:#fff;
 }
-
+ app {
+   display:block;
+   position: relative;
+ }
 main {
   width: calc(100% - 300px);
   margin-left: 300px;
@@ -145,18 +150,26 @@ p {
 form {
     display: block;
 }
-form input {
+form input, form textarea {
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(0,0,0,0.3);
     height: 62px;
     color: #fff;
     font-size: 1.2rem;
     max-width: 100%;
-    width: 300px;
+    width: 100%;
     box-sizing: border-box;
     padding: 1rem;
     margin-bottom: 1rem;
 }
+
+form textarea {
+  height: 400px;
+}
+form textarea.small {
+  height: 82px;
+}
+
 form button {
     min-height: 62px;
     font-size: 1.5rem;
@@ -166,10 +179,15 @@ form button {
     cursor:pointer;
     font-weight:bold;
 }
-form button:hover {
+.actions button {
+  padding: 0.5rem 0.2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  background: rgba(245, 197, 44, 0.8);
+}
+button:hover {
     background: rgba(245, 197, 44, 1);
 }
-
 /**
 * Responsive nav
 **/
@@ -183,11 +201,21 @@ form button:hover {
     text-align: center;
     background:rgba(0,0,0,0.1);
     position: relative;
+    padding-bottom: 1rem;
   }
   main {
     width: 100%;
     margin-left: 0px;
     display:block;
+    padding: 1rem 2rem;
+  }
+  app {
+    padding-bottom:48px; /* for footer */
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+  footer {
+    position: absolute;
   }
   .content-image {
     max-width: 100%;

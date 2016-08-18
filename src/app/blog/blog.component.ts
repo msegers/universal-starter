@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES} from '@angular/router';
 import {AngularFire} from 'angularfire2';
+import {BlogArticle} from './blog-article';
 
 @Component({
   moduleId: __filename,
@@ -12,7 +13,7 @@ import {AngularFire} from 'angularfire2';
 })
 export class Blog {
 
-    public blogs:Blog[] = [];
+    public blogs:BlogArticle[] = [];
 
     constructor(private af: AngularFire) {
         console.log(af);
