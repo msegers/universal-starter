@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {AngularFire} from 'angularfire2';
 import {Blog} from "../blog/blog.component";
 import {BlogArticle} from "../blog/blog-article";
-
+import * as firebase from 'firebase';
 /**
  * TODO: Separate in different modules
  * TODO: Just want something working for now
@@ -17,6 +17,7 @@ import {BlogArticle} from "../blog/blog-article";
                 <button *ngIf="action != 'overview'" (click)="overview()">Overview</button>
                 <button *ngIf="action != 'blog_window'" (click)="add_blog()">New Blog</button>
                 <button (click)="logout()">Logout</button>
+                <button (click)="uploadFile()">Upload</button>
             </div>
             <div *ngIf="action == 'overview'">
               <ul>
@@ -31,6 +32,12 @@ import {BlogArticle} from "../blog/blog-article";
                 <input placeholder="Date" type="date" name="date" [(ngModel)]="blogDate">
                 <textarea class="small" [(ngModel)]="blog.intro" name="intro"></textarea>
                 <textarea [(ngModel)]="blog.body" name="body"></textarea>
+                <button type="submit">Save</button>
+              </form>
+            </div>
+            <div *ngIf="action == 'upload'" id="blog">
+              <form #blogForm="ngForm" (ngSubmit)="return false">
+                <input (change)="files = $event" placeholder="files" type="file" name="title">
                 <button type="submit">Save</button>
               </form>
             </div>
@@ -61,6 +68,8 @@ export class Manage {
 
   //blog repository
   public blogs;
+
+  public files;
 
   //current edited item
   public blog: BlogArticle;
@@ -150,5 +159,43 @@ export class Manage {
   }
   public startAuth() {
     //nothing todo we need form input
+  }
+
+  public uploadFile() {
+    this.action = "upload";
+  }
+
+  public uploadFiles(value) {
+    console.log(value);
+    console.log("files", this.files);
+    let file = value.target.files[0];
+    let storageUrl = 'noticias/imagenes/';
+    let storageRef = firebase.storage().ref(storageUrl + file.name);
+    let uploadTask = storageRef.put(file);
+
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      function(snapshot) {
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED:
+            break;
+
+          case firebase.storage.TaskState.RUNNING:
+            break;
+        }
+      }, function(error) {
+        console.log(error);
+      // switch (error) { // DELETED .CODE FROM ERROR.CODE
+      //   case 'storage/unauthorized':
+      //     break;
+      //
+      //   case 'storage/canceled':
+      //     break;
+      //
+      //   case 'storage/unknown':
+      //     break;
+      // }
+    }, function() {
+    });
   }
 }
